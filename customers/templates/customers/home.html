@@ -1,0 +1,23 @@
+{% extends "customers/base.html" %}
+{% block content %}
+<div class="card-columns">
+  {% for customer in customers %}
+    <div class="card">
+    <div class="card-body">
+      <a href="{% url 'customer-detail' pk=customer.pk %}">
+        <h5 class="card-title">{{customer.first_name}} {{customer.last_name}}</h5>
+      </a>
+      <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'customer-update' pk=customer.pk %}">Update</a>
+      <p class="card-text">
+        Email: {{customer.email}}
+        <br>
+        Address: {{customer.address}}
+        <br>
+        Phone: {{customer.phone}}
+      </p>
+      <p class="card-text"><small class="text-muted">Birthday: {{customer.birthday}}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
