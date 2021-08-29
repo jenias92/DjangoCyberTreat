@@ -1,0 +1,18 @@
+{% extends "customers/base.html" %}
+{% block content %}
+<div class="card-columns">
+    <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{customer.first_name}} {{customer.last_name}}</h5>
+      <p class="card-text">
+        Email: {{customer.email}}
+        <br>
+        Address: {{customer.address}}
+        <br>
+        Phone: {{customer.phone}}
+      </p>
+      <p class="card-text"><small class="text-muted">BirthDay: {{customer.birthday}}</small></p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
